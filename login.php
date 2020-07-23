@@ -18,8 +18,8 @@
                             //errormessage for password mismatch
                         }                       
                     }
-                    else if ($_GET['login'] == "success") {
-                        //Successful signup msg
+                    else if (isset($_GET['login']) && $_GET['login'] == "success") {
+                        //Successful login msg
                     }
                 ?>
                 <form action="phpOnly/plogin.php" method="post">

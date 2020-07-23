@@ -7,6 +7,7 @@
             <section class="section-default">
                 <h1>Sign Up</h1>
                 <?php
+                var_dump($_GET);
                     if (isset($_GET['error'])) {
                         if ($_GET['error'] == "emptyfields") {
                             //errormessage
@@ -27,7 +28,7 @@
                             //errormessage for username already taken
                         }                          
                     }
-                    else if ($_GET['signup'] == "success") {
+                    else if (isset($_GET['signup']) && $_GET['signup'] == "success") {
                         //Successful signup msg
                     }
                 ?>
