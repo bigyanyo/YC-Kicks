@@ -33,7 +33,7 @@
                     }
                 ?>
                 <form action="phpOnly/psignup.php" method="post">
-                    <input type="text" name="uid" placeholder="Username">
+                    <input type="text" name="uid" p laceholder="Username">
                     <input type="text" name="email" placeholder="E-mail">
                     <input type="password" name="pwd" placeholder="Password">
                     <input type="password" name="pwd-repeat" placeholder="Repeat password">

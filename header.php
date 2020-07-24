@@ -5,6 +5,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="author" content="Bigyan Bista, Sushant Rahapal, Susant Basnet">
+    <meta name="keywords" content="YC Kicks, Shoes">
+    <meta name="description" content="Shoe Shop">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YC KICKS</title>
     <link rel="stylesheet" href="css/style.css">
@@ -24,12 +27,6 @@
                 <li><a href="#">About us</a></li>
                 <li><a href="#">Contacts</a></li>
             </ul>
-            <div class="afterNav">
-                <form action="#" method="get">
-                    <input class="search" type="text" name="searchItems" placeholder="Search...">
-                    <button class="search" type="submit" name="search-submit">Submit</button>
-                </form>
-            </div>
         </nav>
         
     </header>
