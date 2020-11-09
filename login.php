@@ -1,3 +1,9 @@
+<?php
+
+    session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Form</title>
     <script src="https://kit.fontawesome.com/10022afe1e.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/login-style.css">
+    <!-- <link rel="stylesheet" href="css/login-style.css"> -->
 </head>
 <body>
     <div class="test">
@@ -40,7 +46,7 @@
             <div class="content">
                 <h3 class="about">New here?</h3>
                 <p class="about">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, eligendi?</p>
-                <a href="signup.html" class="signup-link"><button class="btn transparent" id="signup-btn">Sign Up</button></a>
+                <a href="signup.php" class="signup-link"><button class="btn transparent" id="signup-btn">Sign Up</button></a>
             </div>
             <img src="img/airJordan.png" alt="" class="image">
         </div>
@@ -65,5 +71,6 @@
     }
 ?>
 
-</body>
-</html>
+<?php
+    require "footer.php";
+?>

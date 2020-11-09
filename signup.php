@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Form</title>
     <script src="https://kit.fontawesome.com/10022afe1e.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/login-style.css">
+    <!-- <link rel="stylesheet" href="css/signup-style.css"> -->
 </head>
 <body>
     <main>
@@ -45,7 +45,7 @@
             <div class="content">
                 <h3 class="about">One of us?</h3>
                 <p class="about">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, eligendi?</p>
-                <a href="login.html" class="login-link"><button class="btn transparent" id="login-btn">Login</button></a>
+                <a href="login.php" class="login-link"><button class="btn transparent" id="login-btn">Login</button></a>
             </div>
             <img src="img/airJordan.png" alt="" class="image">
         </div>
