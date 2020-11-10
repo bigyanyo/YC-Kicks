@@ -1,7 +1,5 @@
 <?php
-
-    session_start();
-
+    require "header.php";
 ?>
 
 <!DOCTYPE html>
@@ -15,13 +13,7 @@
     <!-- <link rel="stylesheet" href="css/login-style.css"> -->
 </head>
 <body>
-    <div class="test">
-<header>
-    <?php
-        require "header.php";
-    ?>
-</header>
-    
+<div class="test">
 <main>
     <div class="container">
         <div class="forms-container">

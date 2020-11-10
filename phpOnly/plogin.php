@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 if(isset($_POST['login-submit'])) {
     
     require 'dBHandler.php';
@@ -8,7 +10,7 @@ if(isset($_POST['login-submit'])) {
     $password = $_POST['pwd'];
 
     if (empty($uidmail) || empty($password)) {
-        // header("Location: ../index.php?error=emptyfields");
+        header("Location: ../index.php?error=emptyfields");
         exit();
     }
     else {
@@ -16,7 +18,7 @@ if(isset($_POST['login-submit'])) {
         $stmt = mysqli_stmt_init($con);
 
         if (!mysqli_stmt_prepare($stmt, $sql)) {
-            // header("Location: ../index.php?error=sqlerror");
+            header("Location: ../index.php?error=sqlerror");
             exit();
         }
         else {
@@ -27,26 +29,22 @@ if(isset($_POST['login-submit'])) {
             if ($row=mysqli_fetch_assoc($result)) {
                 $pwcheck=password_verify($password, $row['pwdUsers']);
                 if ($pwcheck == false) {
-                    // header("Location: ../index.php?error=wrongpassword");
+                    header("Location: ../index.php?error=wrongpassword");
                     exit();
                 }
                 else if ($pwcheck == true) {
-                    session_start();
                     $_SESSION['userId'] = $row['idUsers'];
-                    print_r($_SESSION['userId']);
-                    die();
                     $_SESSION['userUiD'] = $row['uidUsers'];
-
-                    // header("Location: ../index.php?login=success");
+                    header("Location: ../index.php?login=success");
                     exit();
                 }
                 else {
-                    // header("Location: ../index.php?error=wrongpassword");
+                    header("Location: ../index.php?error=wrongpassword");
                     exit();
                 }
             }
             else {
-                // header("Location: ../index.php?error=nouser");
+                header("Location: ../index.php?error=nouser");
                 exit();
             }
         }
@@ -55,6 +53,6 @@ if(isset($_POST['login-submit'])) {
 }
 
 else {
-    // header("Location: ../index.php");
+    header("Location: ../index.php");
     exit();
 }

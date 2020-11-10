@@ -4,12 +4,12 @@
 
     <main>
         <?php
-        
+
         if (isset($_SESSION['userId'])) {
-            //logged in
+            echo "You are Logged in!!";
         }
         else {
-            //logged out
+            echo "You are Logged out!!";
         }
         ?>
 
