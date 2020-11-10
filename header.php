@@ -40,6 +40,11 @@
         </form>
         
         <div class="user-cart">
+            <?php
+                if(isset($_SESSION['userUiD'])){
+                    echo '<span class="userID_login">'.$_SESSION['userUiD'].'</span>';
+                }
+            ?>
             <a href="login.php"><div class="far fa-user"></div></a>
             <a href="#"><div class="fas fa-shopping-bag"></div></a>
         </div>
