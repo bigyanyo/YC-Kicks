@@ -6,14 +6,13 @@ if(isset($_POST['submitPw'])){
 
     $loggediniD = $_SESSION['userId'];
 
-    require 'phpOnly/dbHandler.php';
+    require 'dbHandler.php';
     $select = "SELECT * FROM users WHERE idUsers = '$loggediniD'";
     $query = mysqli_query($con, $select);
     $data = mysqli_fetch_assoc($query);
 
     // Hash is a one way method so we need to use password_verify
     // Convert everything to hash and compare
-    // $pwcheck=password_verify($password, $row['pwdUsers']);
 
     $currentpwd = $_POST['currentPw'];
     $new = $_POST['newPw'];

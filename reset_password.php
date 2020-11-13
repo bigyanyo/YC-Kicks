@@ -3,7 +3,7 @@
 ?>
     
     <div>
-        <form action="changepassw.php" method="post">
+        <form action="phpOnly/changepassw.php" method="post">
 
             <label>
                 Current Password: 
