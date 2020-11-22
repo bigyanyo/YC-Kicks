@@ -7,7 +7,7 @@
         use div accordingly for css
     -->
 
-    <label for="username"></label>
+    <label for="username">Username: <?php echo $_SESSION['userUiD'];?></label>
 
     <?php
 
