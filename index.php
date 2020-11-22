@@ -7,6 +7,7 @@
 
         if (isset($_SESSION['userId'])) {
             echo "You are Logged in!!";
+            echo "<br><a class='logout' href='phpOnly/plogout.php'>Logout</a>";
         }
         else {
             echo "You are Logged out!!";
