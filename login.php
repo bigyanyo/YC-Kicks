@@ -60,7 +60,7 @@
             echo "<script>alert('I did not find the user from the given detail. Please try again.');</script>";
         }
         else if ($_GET['error'] == "wrongpassword") {
-            echo "<script>alert('You entered wrong password! Are you hacking? Please try again.');</script>";
+            echo "<script>alert('You entered wrong password. Please try again.');</script>";
         }
     }
     else if (isset($_GET['login']) && $_GET['login'] == "success") {
