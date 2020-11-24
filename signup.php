@@ -55,26 +55,26 @@
 <?php
     if (isset($_GET['error'])) {
         if ($_GET['error'] == "emptyfields") {
-            //errormessage
+            echo "<script>alert('You have to feed me data to get access. Fill up the fields.')</script>";
         }
         else if ($_GET['error'] == "invaliduidandmail") {
-            //errormessage for invalid uid and email
+            echo "<script>alert('Given data is not in proper order.  Please try again.')</script>";
         }
         else if ($_GET['error'] == "invalidmail") {
-            //errormessage for invalid email
+            echo "<script>alert('I am sorry! The e-mail is unfortunately invalid. Please try again.')</script>";
         }
         else if ($_GET['error'] == "invaliduid") {
-            //errormessage for invalid username
+            echo "<script>alert('I am sorry! The username is unfortunately invalid. Please try again.')</script>";
         }
         else if ($_GET['error'] == "passwordcheck") {
-            //errormessage for password mismatch
+            echo "<script>alert('You cannot enter with two different passwords!!  Please re-type password.";
         }
         else if ($_GET['error'] == "usernametaken") {
-            //errormessage for username already taken
+            echo "<script>alert('Oh! It seems like we have already a user registered from your credentials. Would you mind adding some numbers or texts?')</script>";
         }                          
     }
     else if (isset($_GET['signup']) && $_GET['signup'] == "success") {
-        //Successful signup msg
+        echo "<script>alert('Congratulations! Your data is successfully registered to our stomach.')</script>";
     }
 ?>
 

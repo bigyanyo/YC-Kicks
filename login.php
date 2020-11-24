@@ -13,6 +13,7 @@
     <!-- <link rel="stylesheet" href="css/login-style.css"> -->
 </head>
 <body>
+
 <div class="test">
 <main>
     <div class="container">
@@ -47,19 +48,24 @@
     </main>
 
 <?php
+    if (isset($_SESSION['userId'])){
+        header("Location: index.php");
+    }
+
     if (isset($_GET['error'])) {
         if ($_GET['error'] == "emptyfields") {
-            // echo'<script type="text/javascript">emptyfields();</script>';
+            echo "<script>alert('You have to feed me data to get access. Fill up the fields.');</script>";
         }
         else if ($_GET['error'] == "nouser") {
-            // echo'<script type="text/javascript">noUsername();</script>';
+            echo "<script>alert('I did not find the user from the given detail. Please try again.');</script>";
         }
         else if ($_GET['error'] == "wrongpassword") {
-            // echo'<script type="text/javascript">wrongPwd();</script>';
+            echo "<script>alert('You entered wrong password! Are you hacking? Please try again.');</script>";
         }
     }
     else if (isset($_GET['login']) && $_GET['login'] == "success") {
-        // echo'<script type="text/javascript">successLogin();</script>';
+        echo "<script>alert('Congratulations! You logged in successfully.');</script>";
+        header("Location: index.php");
     }
 ?>
 

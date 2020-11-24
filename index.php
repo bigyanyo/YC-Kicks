@@ -6,11 +6,17 @@
         <?php
 
         if (isset($_SESSION['userId'])) {
-            echo "You are Logged in!!";
+            echo "<script>alert('You are logged in!')</script>";
             echo "<br><a class='logout' href='phpOnly/plogout.php'>Logout</a>";
         }
         else {
-            echo "You are Logged out!!";
+            echo "<script>alert('You are not logged in!')</script>";
+        }
+
+        if (isset($_GET['logout'])){
+            if($_GET['logout']=="success"){
+                echo "<script>alert('Sad to see you go! Come back soon!')</script>";
+            }
         }
         ?>
 
