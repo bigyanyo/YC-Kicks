@@ -30,7 +30,7 @@
         </div>
 
         <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li><a href="#">New Arrivals</a></li>
             <li><a href="#">About Us</a></li>
             <li><a href="#">Contact Us</a></li>
@@ -44,10 +44,42 @@
         <div class="user-cart">
             <?php
                 if(isset($_SESSION['userUiD'])){
-                    echo '<span class="userID_login">'.$_SESSION['userUiD'].'</span>';
+                    echo '<span id="userID_login">'.$_SESSION['userUiD'].'</span>';
+                    echo '<ul id="drop-menu">';
+                    echo '<li><a href="profiles.php">Profiles</a></li>';
+                    echo '<li><a href="reset_password.php">Change Password</a></li>';
+                    echo '<li><a class="logout" href="phpOnly/plogout.php">Logout</a></li>';
+                    echo '</ul>';
                 }
             ?>
             <a href="login.php"><div class="far fa-user"></div></a>
             <a href="#"><div class="fas fa-shopping-bag"></div></a>
         </div>
-</nav>
+    </nav>
+
+<script type="text/javascript">
+hideDrop();
+var hidden = false;
+var dm = document.getElementById("userID_login");
+dm.addEventListener("click", (e)=>{
+    if(hidden){
+        showDrop();
+        e.stopPropagation();
+    }else{
+        hideDrop();
+    }
+})
+window.addEventListener("click", ()=>{
+    hideDrop();
+})
+function showDrop(){
+    hidden = false;
+    document.getElementById("drop-menu").style.opacity= "1";
+    document.getElementById("drop-menu").style.visibility= "visible";
+}
+function hideDrop(){
+    hidden = true;
+    document.getElementById("drop-menu").style.opacity = "0";
+    document.getElementById("drop-menu").style.visibility = "hidden";
+}
+</script>

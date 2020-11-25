@@ -48,9 +48,6 @@
     </main>
 
 <?php
-    if (isset($_SESSION['userId'])){
-        header("Location: index.php");
-    }
 
     if (isset($_GET['error'])) {
         if ($_GET['error'] == "emptyfields") {
@@ -65,6 +62,10 @@
     }
     else if (isset($_GET['login']) && $_GET['login'] == "success") {
         echo "<script>alert('Congratulations! You logged in successfully.');</script>";
+        header("Location: index.php");
+    }
+
+    if (isset($_SESSION['userId'])){
         header("Location: index.php");
     }
 ?>

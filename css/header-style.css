@@ -1,45 +1,51 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:400,500,600,700&display=swap');
+
 *{
   margin: 0;
   padding: 0;
   font-family: 'Work Sans', sans-serif;
   box-sizing: border-box;
-} 
+}
+
 nav{
   position: sticky;
   top:0;
-  background: linear-gradient(-90deg,#61d0b7,#04befe
-  , #04befe,#61d0b7);
+  background: linear-gradient(-90deg,#61d0b7,#04befe, #04befe,#61d0b7);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
    padding: 0 100px;
 }
+
 img{
 	cursor:pointer;
-    width: 120px;
-    height: 80px;
-    }
+  width: 120px;
+  height: 80px;
+}
+
 nav ul{
   display: flex;
   flex-wrap: wrap;
   list-style: none;
 }
+
 nav ul li{
   margin: 0 5px;
 }
+
 nav ul li a{
   color: #fff;
   text-decoration: none;
   font-size: 18px;
   font-weight: 500;
   padding: 8px 15px;
-  }
+}
 
 nav ul li a:hover{
   color: #3d4c5e;
 }
+
 nav form{
   display: flex;
   height: 40px;
@@ -48,6 +54,7 @@ nav form{
   border-radius: 4px;
   border: 1px solid #3d4c5e;
 }
+
 nav form .search-data{
   width: 100%;
   height: 100%;
@@ -58,6 +65,7 @@ nav form .search-data{
   font-weight: 500;
   background: none;
 }
+
 nav form button{
   padding: 0 15px;
   color: #3d4c5e;
@@ -67,6 +75,7 @@ nav form button{
   border-radius: 2px;
   cursor: pointer;
 }
+
 nav .user-cart
 {
 	color:#fff;	
@@ -74,8 +83,8 @@ nav .user-cart
 	font-size:30px;
 	padding: 30px 0px 30px 10px; 
 	align-items: center;
-
 }
+
 nav .user-cart a{
 	color:inherit;
 	text-decoration: none;
@@ -87,21 +96,42 @@ nav .menu-btn i{
   cursor: pointer;
   display: none;
 }
+
 input[type="checkbox"]{
   display: none;
 }
+
+#drop-menu{
+  background: #04befe;
+  width: 200px;
+  top: 95px;
+  line-height: 45px;
+  position: absolute;
+}
+
+#drop-menu li a{
+  width: 100%;
+  display: block;
+  padding: 0 0 0 15px;
+  font-weight:;
+  border-radius: 0px;
+}
+
 @media (max-width: 1156px){
   nav{
     padding: 0 40px 0 50px;
   }
 }
+
 @media (max-width: 1044px) {
   nav .menu-btn i{
     display: block;
   }
+
   #click:checked ~ .menu-btn i:before{
     content: "\f00d";
   }
+
   nav ul{
     position:fixed;
     top: 90px;
@@ -113,40 +143,45 @@ input[type="checkbox"]{
     display: block;
     transition: all 0.3s ease;
   }
+
   #click:checked ~ ul{
     left: 0;
   }
+
   nav ul li{
     width: 100%;
     margin: 40px 0;
   }
+
   nav ul li a{
     width: 100%;
     margin-left: -100%;
-   display: block;
-    font-size: 20px;
-   
-    
-	}
-	 nav ul li a:hover
+    display: block;
+    font-size: 20px;    
+  }
+  
+	nav ul li a:hover
   {
     color: #61d0b7;
   }
+
   #click:checked ~ ul li a{
     margin-left: 0px;
   }
 
-   nav form
-    {
-     display: none; 
-    }
-    img{
-    	padding: 0px 0px 0px 74px;
-    }
-    nav form .search-data
-    { 
-    	display:block;
-    }
+  nav form
+  {
+    display: none; 
+  }
+  
+  img{
+    padding: 0px 0px 0px 74px;
+  }
+
+  nav form .search-data
+  { 
+  	display:block;
+  }
 
 }
 
