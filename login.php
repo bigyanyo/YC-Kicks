@@ -1,5 +1,9 @@
 <?php
     require "header.php";
+    
+    if (isset($_SESSION['userId'])){
+        header("Location: index.php");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -59,14 +63,6 @@
         else if ($_GET['error'] == "wrongpassword") {
             echo "<script>alert('You entered wrong password. Please try again.');</script>";
         }
-    }
-    else if (isset($_GET['login']) && $_GET['login'] == "success") {
-        echo "<script>alert('Congratulations! You logged in successfully.');</script>";
-        header("Location: index.php");
-    }
-
-    if (isset($_SESSION['userId'])){
-        header("Location: index.php");
     }
 ?>
 

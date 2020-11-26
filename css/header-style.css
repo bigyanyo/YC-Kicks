@@ -117,13 +117,13 @@ input[type="checkbox"]{
   border-radius: 0px;
 }
 
-@media (max-width: 1156px){
+@media (max-width: 1350px){
   nav{
     padding: 0 40px 0 50px;
   }
 }
 
-@media (max-width: 1044px) {
+@media (max-width: 1170px) {
   nav .menu-btn i{
     display: block;
   }
@@ -181,6 +181,10 @@ input[type="checkbox"]{
   nav form .search-data
   { 
   	display:block;
+  }
+
+  span#userID_login{
+    font-size: 0.8em;
   }
 
 }

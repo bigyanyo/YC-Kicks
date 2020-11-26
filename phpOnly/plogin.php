@@ -35,7 +35,7 @@ if(isset($_POST['login-submit'])) {
                 else if ($pwcheck == true) {
                     $_SESSION['userId'] = $row['idUsers'];
                     $_SESSION['userUiD'] = $row['uidUsers'];
-                    header("Location: ../login.php?login=success");
+                    header("Location: ../index.php?login=success");
                     exit();
                 }
                 else {

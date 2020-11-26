@@ -11,6 +11,11 @@
         // else {
         //     echo "<script>alert('You are not logged in!')</script>";
         // }
+        
+        if (isset($_GET['login']) && $_GET['login'] == "success") {
+            echo "<script>alert('Congratulations! You logged in successfully.');</script>";
+            header("Location: index.php");
+        }
 
         if (isset($_GET['logout'])){
             if($_GET['logout']=="success"){
