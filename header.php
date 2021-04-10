@@ -26,12 +26,12 @@
         </label>
         
         <div class="logo">
-            <img src="img/YCLogo.png"> 
+            <img class="nav-logo" src="img/YCLogo.png"> 
         </div>
 
         <ul>
             <li><a href="index.php">Home</a></li>
-            <li><a href="#">New Arrivals</a></li>
+            <li><a href="newArrival.php">New Arrivals</a></li>
             <li><a href="#">About Us</a></li>
             <li><a href="#">Contact Us</a></li>
         </ul>

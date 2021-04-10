@@ -18,7 +18,7 @@ nav{
    padding: 0 100px;
 }
 
-img{
+img.nav-logo{
 	cursor:pointer;
   width: 120px;
   height: 80px;

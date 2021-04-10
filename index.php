@@ -1,5 +1,5 @@
 <?php
-    require "header.php";
+    include "header.php";
 ?>
 
     <main>
@@ -22,12 +22,18 @@
                 echo "<script>alert('Sad to see you go! Come back soon!')</script>";
             }
         }
+
+        if (isset($_GET['password'])){
+            if($_GET['password']=="changed"){
+                echo "<script>alert('Password successfully changed!!')</script>";
+            }
+        }
         ?>
 
     <link rel="stylesheet" href="css/index-style.css">
 
     <div class="index-first">
-		<p class="caption">Good shoes take you <br>to the good places</p>
+		<p class="caption">Good shoes take you <br>to the good places.</p>
 		<img src="img/YCLogo.png" class="index-img">
 		<p class="caption">Nothing is satisfying than <br>buying a quality shoe.</p>
 	</div>
@@ -35,5 +41,5 @@
     </main>
 
 <?php
-    require "footer.php";
+    include "footer.php";
 ?>

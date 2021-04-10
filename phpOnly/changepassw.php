@@ -20,48 +20,44 @@ if(isset($_POST['submitPw'])){
 
     $oldpwd = password_verify($currentpwd, $data['pwdUsers']);
 
-    if($oldpwd == true){
+    if(empty($currentpwd) || empty($new) || empty($confirm)){
+        header("Location: ../reset_password.php?password=empty");
+        exit();
+    }
 
+    else if($oldpwd == true){
         if ($new == $confirm) {
-
             $hashedPwd = password_hash($new, PASSWORD_DEFAULT);
-
             if(isset($_SESSION['userId'])){
                 $update = "UPDATE users SET pwdUsers = '$hashedPwd'";
                 $query1 = mysqli_query($con, $update);
-            }   else{
-                die("SQL Error");
+            }else{
+                die("SQL Error!!");
             }
 
             if($query1){
-
-                echo "Password Changed!!!";
-                exit();
-                
+                header("Location: ../index.php?password=changed");
+                // echo "Password Changed!!!";
+                exit();  
             }
             else{
-
-                echo "Error";
+                header("Location: ../reset_password.php?password=error");
+                // echo "php Error";
                 exit();
-
             }
-
         }
             else{
-
-                echo "Both password do not match!";
+                header("Location: ../reset_password.php?password=notsame");
+                // echo "Both password do not match!";
                 exit();
-
             }
         }
 
     else{
-
-        echo "You entered wrong password";
+        header("Location: ../reset_password.php?password=mismatch");
+        // echo "You entered wrong password";
         exit();
-
     }
-
     mysqli_close($con);
     exit();
 }
