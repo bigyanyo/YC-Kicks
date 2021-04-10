@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-*{
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
-}
-
 h3.about, p.about, h2.title, input{
 	font-family: 'Poppins', sans-serif;
 }
