@@ -22,4 +22,4 @@ function updateItem($productId, $size, $quantityToReduce){
 }
 
 
- updateItem(3, 42, 2) ;
+ 

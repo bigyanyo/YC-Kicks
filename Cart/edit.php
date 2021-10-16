@@ -8,6 +8,8 @@
             $Size= $_POST['size'];
             $UnitPrice = $_POST['unit_price'];
             $Quantity=$_POST['quantity'];
+            print_r($Quantity);
+          
             $q = "update cartadmin set Product_Name='$ProductName',Size='$Size',Unit_Price=$UnitPrice,quantity=$Quantity where id=$id";
            if(($_FILES['pic']['size']!=0))
            {
@@ -18,6 +20,7 @@
              $destfile = 'upload/'.$filename;
              move_uploaded_file($filepath,$destfile);
              $q = "update cartadmin set Pic='$destfile',Product_Name='$ProductName',Size='$Size',Unit_Price=$UnitPrice,quantity=$Quantity where id=$id";
+             
            }
             $query = mysqli_query($con,$q);
             header('location:uploaddatabase.php');

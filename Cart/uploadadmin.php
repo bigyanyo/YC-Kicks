@@ -11,7 +11,7 @@
             $Size= $_POST['size'];
             $UnitPrice = $_POST['unit_price'];
             $Quantity = $_POST['quantity'];
-            
+           
              $filename = $file['name'];
              $fileerror = $file['error'];
              $filepath = $file['tmp_name'];
@@ -20,8 +20,8 @@
              move_uploaded_file($filepath,$destfile);
           
             $insertquery = "insert into cartadmin (Pic,Product_Name,Size,Unit_Price,quantity)values('$destfile','$ProductName','$Size','$UnitPrice','$Quantity')";
-             // echo($insertquery);
-             // die();
+            //  echo($insertquery);
+            //  die();
             $query = mysqli_query($con,$insertquery);
             if($query)
             {

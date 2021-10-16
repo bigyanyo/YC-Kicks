@@ -1,12 +1,13 @@
 <?php
+    require "header.php";
+?>
+<?php
     include 'connection.php';
     $id = $_GET['id'];
     $q ="SELECT * FROM cartadmin WHERE id=$id"; 
     $query=mysqli_query($con,$q);
    foreach(mysqli_fetch_all($query,MYSQLI_ASSOC) as $result)
    {
-        print_r($result);
-      
         $file = $result['Pic'];
         $ProductName = $result['Product_Name'];
         $Size= $result['Size'];
@@ -22,13 +23,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/update.css">
 </head>
 <body>
-    <div class="">
-     <form action="edit.php" method="post" enctype="multipart/form-data">
-    <div class="">
-    <table border=1>
    
+     <form action="edit.php" method="post" enctype="multipart/form-data" class="eupload">
+    <div class="">
+    <table>
+   <tr>
+    <td>Product ID:</td>
+    <td><input type="text" name="id" value = "<?= $id ?>" readonly></td>
+   </tr>
     <tr>
     <td>Product Image:</td>
     <td><input type="file" name="pic" value="<?php echo $file;?>"></td>
@@ -48,18 +53,19 @@
     <td>Quantity:</td>
     <td><input type="text" name="quantity" value="<?php echo $Quantity;?>"></td>
     </tr>
-    <input type="text" name="id" value = "<?= $id ?>">
-    <tr class=button>
-    <td><input type="submit" name="update" value = "Update" ></td>
-    </tr>
-</table>
-</div>
+    
+ 
+    </table>    
+    </div>
+    
+    <input type="submit" name="update" value = "Update" class="ebtn">
 </form>
-<script>
 
-
-</script>
 </body>
 </html>
+<?php
+    require "footer.php";
+?>
+
 
 

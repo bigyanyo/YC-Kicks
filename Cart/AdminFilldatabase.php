@@ -1,14 +1,17 @@
+<?php
+    require "header.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/AdminFilldatabase.css">
 </head>
 <body>
-    <div class="">
-    <form action="uploadadmin.php" method="post" enctype="multipart/form-data">
-    <div class="container">
+    <form action="uploadadmin.php" method="post" enctype="multipart/form-data" class="aform">
+    <div>
     <table class="">
     <tr>
     <td>Product Image:</td>
@@ -26,11 +29,20 @@
     <td>Unit Price:</td>
     <td><input type="text" name="unit_price" required></td>
     </tr>
+    <tr>
     <td>Quantiy:</td>
     <td><input type="text" name="quantity" required></td>
-    <tr>
-    <tr class=button>
-    <td><input type="submit" name="upload" value = "Upload"></td>
     </tr>
+          
+</table>
+    </div>
+   
+ <input type="submit" name="upload" value = "Upload" class="asub">
+    </form>
+  
+</table>
 </body>
 </html>
+<?php
+    require "footer.php";
+?>

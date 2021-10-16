@@ -1,4 +1,6 @@
-
+<?php
+    require "header.php";
+?>
 <?php
 
         include 'connection.php';    
@@ -14,10 +16,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/uploaddatabase.css">
 </head>
 <body>
-     <div class="">
-     <table border =1>
+     <div class="upload">
+     <table >
         <th>Id</th>
      <th>Product Image</th>
      <th>Product Name</th>
@@ -41,9 +44,9 @@
                <td>&#8360;<?php echo $result['Unit_Price']; ?></td>
                <td><?php echo $result['quantity'];?></td>
                 <td>
-                    <a href="update.php?id=<?php echo $result['id']; ?>" class="editbtn">Edit
+                    <a href="update.php?id=<?php echo $result['id']; ?>" class="ubtn">Edit
                     </td>
-                <td><a href="delete.php?id=<?php echo $result['id']; ?>" class=deletebtn>delete</td>
+                <td><a href="delete.php?id=<?php echo $result['id']; ?>" class="ubtn">delete</td>
 
             </tr>
                 <?php
@@ -51,6 +54,9 @@
                
         
      ?>
-                
+     </table>  
 </body>
 </html>
+<?php
+    require "footer.php";
+?>

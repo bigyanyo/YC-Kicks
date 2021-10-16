@@ -1,5 +1,9 @@
 <?php
-    session_start();
+    require "header.php";
+?>
+
+<?php
+    
     include "connection.php";
 ?>
 <!DOCTYPE html>
@@ -8,11 +12,13 @@
 	<title>usercart</title>
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/try.css">
 </head>
 <body>
 
-<form action="proceed.php" method="post">
-	<table border="1">
+<form action="proceed.php" method="post" class="uform">
+    <div>
+	<table>
 	<tr>
 			<th> Image </th>
 			<th> Product Name </th>
@@ -30,7 +36,7 @@
         {
     ?>              
                 <tr>
-                 <td><img src="<?php echo $result['Pic'];?>" height="50%" width="50%"></td>
+                 <td><img src="<?php echo $result['Pic'];?>" height="150%" width="150%"></td>
                  <td><?php echo $result['Product_Name'];?></td>
                  <td><?php echo $result['Size'];?></td>
                  <td><input type="text" id="price" name="price" value="<?php echo $result['Price'];?>" style="border-width:0px;border:none;outline:none;" readonly></td>
@@ -38,12 +44,18 @@
                  <td><input type="text" id="total" name="total_price" value="<?php echo $result['Price'];?>" style="border-width:0px;border:none;outline:none;" readonly></td>
                  <td><a href="itemremove.php?ID=<?php echo $result['ID'];?>"><div class="fa fa-trash-o" style="font-size:40px;color:red"></div></a></td>
                  </tr>
+    
     <?php
         }
     ?>
-        
-        <input type="submit" name="proceed" value="Proceed">
+        </table>
+    </div>
+        <input type="submit" name="proceed" value="Proceed" class="usub">
 			</form>
+  
 
   </body>
   </html>      
+  <?php
+    require "footer.php";
+?>

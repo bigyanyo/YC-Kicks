@@ -14,7 +14,6 @@
     $lastQuantity = $quantities[$indexToEdit] ;
     $quantities[$indexToEdit] = $lastQuantity - $quantityToReduce ;
     
-    if(($lastQuantity - $quantityToReduce) < 0) return ;
     $updateQuery = 'update cartadmin set quantity = \''. implode("/", $quantities). "' where id = $productId" ;
     // echo $updateQuery ;
     mysqli_query($con, $updateQuery) ;
@@ -42,15 +41,7 @@
                 {
                     $a[$i]=((explode('/',$size_array[$i])));
                     $b[$i]=((explode('/',$quantity_array[$i])));
-                }
-                print_r($id_array);
-                print_r($a);
-                echo"<br>";
-                print_r($b);
-
-                               
-              
-                
+                } 
                 // $c=[];
                 // $c=array_combine($a,$b);
               

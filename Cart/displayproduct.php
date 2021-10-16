@@ -1,30 +1,38 @@
 <?php
+    require "header.php";
+?>
+
+<?php
    include 'connection.php';
 
 	  $displayquery = "select * from cartadmin";
      $querydisplay = mysqli_query($con,$displayquery);
 
 ?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Products</title>
+   <link rel="stylesheet" href="css/displayproduct.css">
 </head>
 <body>
-<div class ="flex-container" style="display:flex" style="flex-wrap:wrap">
+   <div class="dflex">
 	<?php
 
                 while($result = mysqli_fetch_array($querydisplay))
                 {
                 ?>
-                <div class="" >
-                <img src="<?php echo $result['Pic']; ?>" height="50%" width="50%"><br>
-                <?php echo $result['Product_Name']; ?><br>
+              <div class="pall">
+                <img src="<?php echo $result['Pic']; ?>"  class="dimg"><br>
+                <div class="pdetail">
+                <div class="pname"><?php echo $result['Product_Name'];?><br>
                <?php  $a=$result['Size']; 
                       $pieces = explode("/", $a);
+                      $b=$result['quantity'];
+                      $qpieces = explode("/",$b);
+                     
                       ?>
+
                   <form action="addtocartdatabase.php" method="post">
                      <label>Size:</label>
                         <select name="size">
@@ -32,25 +40,37 @@
                              for($i=0;$i<sizeof($pieces);$i++)
                               {  
                            ?>
-                                 <option value="<?php echo $pieces[$i]?>">
+                           <?php if($qpieces[$i] > 2): ?>
+                              <option value="<?php echo $pieces[$i]?>">
                                  <?php   
                                     echo $pieces[$i];
                                  ?>       
                                  </option>
+   
+                           <?php endif;?>
+                                 
                            <?php
                               }
                            ?>
                         </select><br>
                 &#8360;<?php echo $result['Unit_Price']; ?><br>
              <input type="hidden" name="id" value = "<?= $result['id'] ?>">
-              <input type="submit" name="add" value = "Add to Cart" >
+                           </div>
+             </div>
+              <input type="submit" name="add" value = "Add to Cart" class="psub" >  
+                           
+                           </div>
                </form>
+               
                <?php
 
            }
            ?>
+             </div>
 
-</div>
 
 </body>
 </html>
+<?php
+require "footer.php";
+?>
